@@ -18,33 +18,54 @@
             box-sizing: border-box; 
         }
         .container { 
-            max-width: 400px; width: 100%; 
+            max-width: 400px; 
+            width: 100%; 
             background: rgba(30, 41, 59, 0.7); 
-            padding: 30px; border-radius: 25px; 
+            padding: 30px; 
+            border-radius: 25px; 
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); 
             box-sizing: border-box;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px); 
         }
         .badge {
-            display: inline-block; background-color: rgba(34, 197, 94, 0.2);
-            color: #4ade80; padding: 6px 16px; border-radius: 20px;
-            font-size: 13px; margin-bottom: 20px; border: 1px solid rgba(74, 222, 128, 0.4);
+            display: inline-block;
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(74, 222, 128, 0.4);
         }
         .profile-img {
-            width: 110px; height: 110px; border-radius: 50%;
-            object-fit: cover; margin-bottom: 15px; border: 3px solid rgba(255, 255, 255, 0.2);
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
         }
         h1 { margin: 10px 0 5px 0; font-size: 24px; color: #ffffff; text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px; }
         p { color: #94a3b8; font-size: 14px; margin: 5px 0 0 0; line-height: 1.4; }
         .timer { color: #4ade80; font-weight: bold; margin-top: 25px; font-size: 15px; }
-        .timer span { color: white; background: #22c55e; padding: 2px 6px; border-radius: 4px; margin-left: 3px; display: inline-block; min-width: 25px; }
+        .timer span { color: white; background: #22c55e; padding: 2px 6px; border-radius: 4px; margin-left: 3px; }
         .btn { 
-            display: flex; justify-content: center; align-items: center; gap: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
             background: linear-gradient(90deg, #7c2d12 0%, #451a03 100%); 
-            color: white; text-decoration: none; padding: 14px; border-radius: 50px; 
-            font-weight: bold; margin-top: 20px; font-size: 16px; border: 2px solid #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); transition: 0.3s;
+            color: white; 
+            text-decoration: none; 
+            padding: 14px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            margin-top: 20px; 
+            font-size: 16px; 
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+            transition: 0.3s;
         }
         .btn:hover { transform: scale(1.02); box-shadow: 0 0 25px rgba(255, 255, 255, 0.7); }
         .btn svg { width: 18px; height: 18px; fill: white; }
@@ -60,36 +81,16 @@
     <img src="https://ibb.co" alt="Profile" class="profile-img">
     <h1>Cricket With Monika</h1>
     <p>Honest analysis • Match insights • Community driven</p>
-    
-    <div class="timer" id="timer-box">FREE JOINING ENDS IN <span id="seconds">18</span>s</div>
-    
-    <!-- यहाँ मैंने लिंक को ऐप-फ्रेंडली 'tg://join?invite=' फॉर्मेट में बदल दिया है जो सीधे ऐप खोलेगा -->
-    <a href="tg://https://t.me/+AQuvMqsY-nViZTA9" class="btn">
+    <div class="timer">FREE JOINING ENDS IN <span>18s</span></div>
+    <a href="https://t.me/+AQuvMqsY-nViZTA9" class="btn" target="_blank">
         Subscribe Now For Free 
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-.99.53-1.41.52-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.36-.49.99-.75 3.88-1.69 6.46-2.8 7.74-3.32 3.69-1.5 4.45-1.76 4.95-1.77.11 0 .36.03.52.16.13.1.17.24.18.34-.01.06.01.21 0 .28z"/></svg>
     </a>
-    
     <div class="divider"></div>
     <div class="disclaimer">
         Disclaimer: This channel shares cricket updates, analysis, and general information for fans. It does not promote betting or gambling. No outcomes are guaranteed. Please verify independently and act responsibly.
     </div>
 </div>
-
-<script>
-    let timeLeft = 18; 
-    const timerElement = document.getElementById('seconds');
-    const timerBox = document.getElementById('timer-box');
-
-    const countdown = setInterval(function() {
-        timeLeft--;
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            timerBox.innerHTML = "<span style='background:#f43f5e; padding: 4px 10px; border-radius: 20px;'>FREE JOINING ENDED!</span>";
-        } else {
-            timerElement.textContent = timeLeft;
-        }
-    }, 1000);
-</script>
 
 </body>
 </html>

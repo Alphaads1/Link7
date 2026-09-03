@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cricket With Yashvardhan</title>
+    <title>Cricket With Monika</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Basic Setup */
         * {
             margin: 0;
             padding: 0;
@@ -15,9 +14,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Background aur Page Layout */
         body {
-            /* Yeh background ka gradient color hai (Teal se Dark Blue) */
             background: linear-gradient(135deg, #094754 0%, #0a1118 100%);
             min-height: 100vh;
             display: flex;
@@ -27,39 +24,39 @@
             padding: 20px;
         }
 
-        /* Card ka Design */
         .card {
-            background: #151f2b; /* Card ka dark color */
+            background: #151f2b;
             border-radius: 25px;
             padding: 40px 25px;
             width: 100%;
             max-width: 420px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Shadow effect */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
-        /* Upar wala Green Badge */
+        /* Yahan CSS mein change kiya hai taaki badge center mein rahe */
         .top-badge {
-            background-color: #1a4235; /* Dark Green Background */
-            color: #4ade80; /* Light Green Text */
+            background-color: #1a4235;
+            color: #4ade80;
             font-size: 0.85rem;
             padding: 6px 16px;
             border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 25px;
+            display: block; 
+            width: max-content; 
+            margin: 0 auto 25px auto; 
         }
 
-        /* Profile Photo */
+        /* Yahan CSS mein change kiya hai taaki photo center mein rahe */
         .profile-img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
+            display: block; 
+            margin: 0 auto 20px auto; 
             border: 2px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Naam (Title) */
         .title {
             font-size: 1.6rem;
             font-weight: 700;
@@ -67,7 +64,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Subtitle */
         .subtitle {
             color: #a0aec0;
             font-size: 0.95rem;
@@ -75,7 +71,6 @@
             margin-bottom: 35px;
         }
 
-        /* Timer wala Text */
         .timer-text {
             color: #a0aec0;
             font-size: 0.85rem;
@@ -84,34 +79,30 @@
             margin-bottom: 12px;
         }
 
-        /* Sirf Seconds (18s) ka style */
         .timer-countdown {
-            color: #4ade80; /* Bright Green */
+            color: #4ade80;
             font-weight: bold;
             font-size: 1.1rem;
         }
 
-        /* Main Subscribe Button */
         .subscribe-btn {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(180deg, #3d1b0d, #140803); /* Brown/Black gradient */
+            background: linear-gradient(180deg, #3d1b0d, #140803);
             color: #ffffff;
             text-decoration: none;
             padding: 16px 20px;
-            border-radius: 40px; /* Gol kinare (Pill shape) */
+            border-radius: 40px;
             font-size: 1.2rem;
             font-weight: bold;
-            border: 2px solid #ffffff; /* White border */
+            border: 2px solid #ffffff;
             margin-bottom: 35px;
-            /* Yahi woh code hai jisse button ke neeche Green Chamak (Glow) aayegi */
             box-shadow: 0 15px 40px -10px rgba(74, 222, 128, 0.6); 
             transition: all 0.3s ease;
         }
         
-        /* Telegram Icon ka gol white background */
         .subscribe-btn i {
             background-color: white;
             color: black;
@@ -124,14 +115,12 @@
             font-size: 0.8rem;
         }
 
-        /* Dashed Line (Divider) */
         .divider {
             border: none;
             border-top: 1px dashed rgba(255, 255, 255, 0.15);
             margin-bottom: 25px;
         }
 
-        /* Disclaimer */
         .disclaimer {
             color: #718096;
             font-size: 0.8rem;
@@ -142,11 +131,11 @@
 <body>
 
     <div class="card">
-        <div class="top-badge">Yashvardhan Solanki</div>
+        <div class="top-badge">Cricket With Monika</div>
         
-        <img src="https://via.placeholder.com/100" alt="Yashvardhan Solanki" class="profile-img">
+        <img src="https://via.placeholder.com/100" alt="Cricket with Monika" class="profile-img">
         
-        <h1 class="title">Yashvardhan SOLANKI</h1>
+        <h1 class="title">Cricket With Monika</h1>
         <p class="subtitle">Honest analysis &bull; Match insights &bull; Community driven</p>
 
         <p class="timer-text">FREE JOINING ENDS IN <span class="timer-countdown" id="timer">18s</span></p>
@@ -163,7 +152,6 @@
     </div>
 
     <script>
-        // Timer shuru karne ke liye time (seconds mein)
         let timeLeft = 18; 
         const timerElement = document.getElementById('timer');
         
@@ -175,7 +163,7 @@
                 clearInterval(countdown);
                 timerElement.textContent = '0s';
             }
-        }, 1000); // Har 1000 millisecond (1 second) mein update hoga
+        }, 1000);
     </script>
 
 </body>

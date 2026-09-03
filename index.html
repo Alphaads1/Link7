@@ -1,96 +1,182 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cricket With Monika - Analysis</title>
+    <title>Cricket With Yashvardhan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        html, body { height: 100%; margin: 0; padding: 0; }
-        body { 
-            font-family: Arial, sans-serif; 
-            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #0d1b2a 100%); 
-            color: white; 
-            text-align: center; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            padding: 20px; 
-            box-sizing: border-box; 
-        }
-        .container { 
-            max-width: 400px; 
-            width: 100%; 
-            background: rgba(30, 41, 59, 0.7); 
-            padding: 30px; 
-            border-radius: 25px; 
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); 
+        /* Basic Setup */
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px); 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .badge {
-            display: inline-block;
-            background-color: rgba(34, 197, 94, 0.2);
-            color: #4ade80;
+
+        /* Background aur Page Layout */
+        body {
+            /* Yeh background ka gradient color hai (Teal se Dark Blue) */
+            background: linear-gradient(135deg, #094754 0%, #0a1118 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        /* Card ka Design */
+        .card {
+            background: #151f2b; /* Card ka dark color */
+            border-radius: 25px;
+            padding: 40px 25px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* Shadow effect */
+        }
+
+        /* Upar wala Green Badge */
+        .top-badge {
+            background-color: #1a4235; /* Dark Green Background */
+            color: #4ade80; /* Light Green Text */
+            font-size: 0.85rem;
             padding: 6px 16px;
             border-radius: 20px;
-            font-size: 13px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(74, 222, 128, 0.4);
+            display: inline-block;
+            margin-bottom: 25px;
         }
+
+        /* Profile Photo */
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.05);
         }
-        h1 { margin: 10px 0 5px 0; font-size: 24px; color: #ffffff; text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px; }
-        p { color: #94a3b8; font-size: 14px; margin: 5px 0 0 0; line-height: 1.4; }
-        .timer { color: #4ade80; font-weight: bold; margin-top: 25px; font-size: 15px; }
-        .timer span { color: white; background: #22c55e; padding: 2px 6px; border-radius: 4px; margin-left: 3px; }
-        .btn { 
+
+        /* Naam (Title) */
+        .title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Subtitle */
+        .subtitle {
+            color: #a0aec0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 35px;
+        }
+
+        /* Timer wala Text */
+        .timer-text {
+            color: #a0aec0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        /* Sirf Seconds (18s) ka style */
+        .timer-countdown {
+            color: #4ade80; /* Bright Green */
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Main Subscribe Button */
+        .subscribe-btn {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(90deg, #7c2d12 0%, #451a03 100%); 
-            color: white; 
-            text-decoration: none; 
-            padding: 14px; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            margin-top: 20px; 
-            font-size: 16px; 
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-            transition: 0.3s;
+            background: linear-gradient(180deg, #3d1b0d, #140803); /* Brown/Black gradient */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 40px; /* Gol kinare (Pill shape) */
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 2px solid #ffffff; /* White border */
+            margin-bottom: 35px;
+            /* Yahi woh code hai jisse button ke neeche Green Chamak (Glow) aayegi */
+            box-shadow: 0 15px 40px -10px rgba(74, 222, 128, 0.6); 
+            transition: all 0.3s ease;
         }
-        .btn:hover { transform: scale(1.02); box-shadow: 0 0 25px rgba(255, 255, 255, 0.7); }
-        .btn svg { width: 18px; height: 18px; fill: white; }
-        .divider { border-top: 1px dashed rgba(255, 255, 255, 0.2); margin-top: 30px; }
-        .disclaimer { font-size: 11px; color: #64748b; margin-top: 15px; line-height: 1.5; text-align: center; }
+        
+        /* Telegram Icon ka gol white background */
+        .subscribe-btn i {
+            background-color: white;
+            color: black;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* Dashed Line (Divider) */
+        .divider {
+            border: none;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            margin-bottom: 25px;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            color: #718096;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="badge">Cricket With Monika</div>
-    <br>
-    <img src="https://ibb.co" alt="Profile" class="profile-img">
-    <h1>Cricket With Monika</h1>
-    <p>Honest analysis • Match insights • Community driven</p>
-    <div class="timer">FREE JOINING ENDS IN <span>18s</span></div>
-    <a href="https://t.me/+AQuvMqsY-nViZTA9" class="btn" target="_blank">
-        Subscribe Now For Free 
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.66-.52.36-.99.53-1.41.52-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.36-.49.99-.75 3.88-1.69 6.46-2.8 7.74-3.32 3.69-1.5 4.45-1.76 4.95-1.77.11 0 .36.03.52.16.13.1.17.24.18.34-.01.06.01.21 0 .28z"/></svg>
-    </a>
-    <div class="divider"></div>
-    <div class="disclaimer">
-        Disclaimer: This channel shares cricket updates, analysis, and general information for fans. It does not promote betting or gambling. No outcomes are guaranteed. Please verify independently and act responsibly.
+    <div class="card">
+        <div class="top-badge">Yashvardhan Solanki</div>
+        
+        <img src="https://via.placeholder.com/100" alt="Yashvardhan Solanki" class="profile-img">
+        
+        <h1 class="title">Yashvardhan SOLANKI</h1>
+        <p class="subtitle">Honest analysis &bull; Match insights &bull; Community driven</p>
+
+        <p class="timer-text">FREE JOINING ENDS IN <span class="timer-countdown" id="timer">18s</span></p>
+
+        <a href="https://t.me/+AQuvMqsY-nViZTA9" class="subscribe-btn">
+            Subscribe Now For Free <i class="fab fa-telegram-plane"></i>
+        </a>
+
+        <hr class="divider">
+
+        <p class="disclaimer">
+            Disclaimer: This channel shares cricket updates, analysis, and general information for fans. It does not promote betting or gambling. No outcomes are guaranteed. Please verify independently and act responsibly.
+        </p>
     </div>
-</div>
+
+    <script>
+        // Timer shuru karne ke liye time (seconds mein)
+        let timeLeft = 18; 
+        const timerElement = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft + 's';
+            
+            if(timeLeft <= 0) {
+                clearInterval(countdown);
+                timerElement.textContent = '0s';
+            }
+        }, 1000); // Har 1000 millisecond (1 second) mein update hoga
+    </script>
 
 </body>
 </html>
